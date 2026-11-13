@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pick a Lane</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #101014;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+header {
+  background: #c8102e;
+  padding: 28px 16px;
+  text-align: center;
+}
+h1 { margin: 0; font-size: 36px; }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+}
+button {
+  background: #c8102e;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+main {
+  max-width: 850px;
+  margin: auto;
+  padding: 20px;
+}
+section { display: none; }
+section.active { display: block; }
+.card {
+  background: #24242d;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 16px 0;
+}
+.video {
+  background: black;
+  border: 2px solid #555;
+  border-radius: 10px;
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 20px;
+}
+.status { color: #ffd166; }
+footer {
+  color: #aaa;
+  text-align: center;
+  padding: 25px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>PICK A LANE</h1>
+  <p>Where Drag Racing Comes Alive</p>
+</header>
+
+<nav>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('live')">Live Racing</button>
+  <button onclick="showPage('results')">Results</button>
+  <button onclick="showPage('profile')">Profile</button>
+</nav>
+
+<main>
+  <section id="home" class="active">
+    <h2>Welcome to Pick a Lane</h2>
+    <div class="card">
+      <h3>Drag Racing Central</h3>
+      <p>Watch races, follow drivers, and check results.</p>
+      <button onclick="showPage('live')">
+        Watch Racing
+      </button>
+    </div>
+  </section>
+
+  <section id="live">
+    <h2>Live Racing</h2>
+    <div class="card">
+      <p class="status">No live broadcast connected</p>
+      <div class="video">
+        Live racing video will appear here.
+      </div>
+      <p>Lane 1 vs Lane 2</p>
+    </div>
+  
+<h3>Upcoming Races</h3>
+
+<div class="card">
+  <h3>Race 1: Mustang vs Camaro</h3>
+  <p>Time: 7:00 PM</p>
+  <button onclick="alert('Demo race video coming soon!')">Watch Race</button>
+</div>
+
+<div class="card">
+  <h3>Race 2: Hellcat vs Corvette</h3>
+  <p>Time: 8:00 PM</p>
+  <button onclick="alert('Demo race video coming soon!')">Watch Race</button>
+</div>
+
+<div class="card">
+  <h3>Race 3: GTR vs Supra</h3>
+  <p>Time: 9:00 PM</p>
+  <button onclick="alert('Demo race video coming soon!')">Watch Race</button>
+</div>
+
+</section>
+
+  <section id="results">
+    <h2>Race Results</h2>
+    <div class="card">
+      <h3>Demo Race</h3>
+      <p>Lane 1: 10.52 seconds</p>
+      <p>Lane 2: 10.89 seconds</p>
+      <p><strong>Winner: Lane 1</strong></p>
+      <small>Sample results only.</small>
+    </div>
+  </section>
+
+  <section id="profile">
+    <h2>My Profile</h2>
+    <div class="card">
+      <p>Driver and spectator accounts coming soon.</p>
+    </div>
+  </section>
+</main>
+
+<footer>Pick a Lane - Prototype Version 1</footer>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll("main section")
+    .forEach(section => {
+      section.classList.remove("active");
+    });
+
+  document.getElementById(pageId)
+    .classList.add("active");
+}
+</script>
+</body>
+</html>
